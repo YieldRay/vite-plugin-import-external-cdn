@@ -7,7 +7,6 @@ import { resolve } from "node:path";
 import { createRequire } from "node:module";
 
 const useName = createPluginName(false);
-const name = useName("import-external-cdn");
 
 interface Options {
     path: (name: string, version: string) => string | URL;
@@ -15,6 +14,8 @@ interface Options {
 }
 
 const usePlugin = ({ path, importMap }: Partial<Options> = {}): Plugin => {
+    const name = useName("import-external-cdn");
+
     return {
         name,
         config: ({ root }) => {
@@ -64,14 +65,15 @@ const usePlugin = ({ path, importMap }: Partial<Options> = {}): Plugin => {
                 },
             };
         },
-        transformIndexHtml(html) {
-            if (!importMap) return html;
-            const scriptTag = String.raw`<script type="importmap">
-${JSON.stringify(importMap, null, 4)}
+        transformIndexHtml: importMap
+            ? (html) => {
+                  const scriptTag = String.raw`<script type="importmap">
+    ${JSON.stringify(importMap, null, 4)}
 </script>`;
-            const updatedHtml = html.replace("</title>", `</title>\n${scriptTag}`);
-            return updatedHtml;
-        },
+                  const updatedHtml = html.replace("</title>", `</title>\n${scriptTag}`);
+                  return updatedHtml;
+              }
+            : undefined,
     };
 };
 
