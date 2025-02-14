@@ -1,0 +1,66 @@
+{
+    "version": "0.0.0",
+    "name": "vite-plugin-import-external-cdn",
+    "description": "import dependencies from external cdn",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/YieldRay/vite-plugin-import-external-cdn.git"
+    },
+    "exports": {
+        "./*": "./*",
+        ".": {
+            "types": "./dist/index.d.ts",
+            "require": "./dist/index.js",
+            "import": "./dist/index.mjs"
+        }
+    },
+    "files": [
+        "dist",
+        "client.d.ts"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "test": "vitest",
+        "test:watch": "vitest --watch",
+        "coverage": "vitest --coverage",
+        "dev": "pnpm build --watch",
+        "init:info": "plop --plopfile scripts/init.js",
+        "release": "npm run build && bumpp --commit --push --tag && npm publish",
+        "play": "pnpm -C examples/vite run dev",
+        "play:open": "pnpm -C examples/vite run dev:open",
+        "play:host": "pnpm -C examples/vite run dev:host",
+        "play:build": "pnpm -C examples/vite run build",
+        "play:preview": "pnpm -C examples/vite run preview",
+        "play:preview:open": "pnpm -C examples/vite run preview:open",
+        "play:preview:host": "pnpm -C examples/vite run preview:host"
+    },
+    "keywords": [
+        "vite",
+        "plugin"
+    ],
+    "author": {
+        "email": "yieldray@outlook.com",
+        "name": "YieldRay",
+        "url": "https://github.com/YieldRay"
+    },
+    "bugs": {
+        "email": "yieldray@outlook.com",
+        "url": "https://github.com/YieldRay/vite-plugin-import-external-cdn/issues"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^22.13.4",
+        "bumpp": "^10.0.3",
+        "c8": "^10.1.3",
+        "esno": "^4.8.0",
+        "plop": "^4.0.1",
+        "tsup": "^8.3.6",
+        "typescript": "^5.7.3",
+        "vite": "^6.1.0",
+        "vitest": "^3.0.5"
+    },
+    "packageManager": "pnpm@10.4.0"
+}
