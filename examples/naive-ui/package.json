@@ -24,9 +24,9 @@
     "npm-run-all2": "^7.0.2",
     "typescript": "~5.7.3",
     "vite": "^6.1.0",
-    "vite-plugin-vue-devtools": "^7.7.2",
     "vite-plugin-import-external-cdn": "workspace:*",
     "vite-plugin-singlefile": "^2.1.0",
-    "vue-tsc": "^2.2.0"
+    "vite-plugin-vue-devtools": "^7.7.2",
+    "vue-tsc": "^2.2.2"
   }
 }

@@ -36,7 +36,7 @@ npm i -D vite-plugin-import-external-cdn
 
 ```js
 import { defineConfig } from "vite";
-import { viteSingleFile } from "vite-plugin-singlefile";
+import importExternalCDN from "vite-plugin-import-external-cdn";
 
 export default defineConfig({
     plugins: [importExternalCDN()],
@@ -49,7 +49,7 @@ export default defineConfig({
 
 ```js
 import { defineConfig } from "vite";
-import { viteSingleFile } from "vite-plugin-singlefile";
+import importExternalCDN from "vite-plugin-import-external-cdn";
 
 export default defineConfig({
     plugins: [
