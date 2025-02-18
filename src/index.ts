@@ -1,12 +1,10 @@
 import type { Plugin } from "vite";
-import { createPluginName } from "./shared/create";
 import type { ImportMap } from "./shared/importMap";
+import { createPluginName } from "./shared/create";
 import { cwd } from "node:process";
 import { URL } from "node:url";
 import { resolve } from "node:path";
 import { createRequire } from "node:module";
-
-const useName = createPluginName(false);
 
 interface Options {
     path: (name: string, version: string) => string | URL;
@@ -14,6 +12,7 @@ interface Options {
 }
 
 const usePlugin = ({ path, importMap }: Partial<Options> = {}): Plugin => {
+    const useName = createPluginName(false);
     const name = useName("import-external-cdn");
 
     return {
