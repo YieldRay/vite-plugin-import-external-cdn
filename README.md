@@ -1,5 +1,10 @@
 # vite-plugin-import-external-cdn
 
+[![npm](https://img.shields.io/npm/v/vite-plugin-import-external-cdn)](https://www.npmjs.com/package/vite-plugin-import-external-cdn)
+[![node-current](https://img.shields.io/node/v/vite-plugin-import-external-cdn)](https://nodejs.dev/)
+[![install size](https://packagephobia.com/badge?p=vite-plugin-import-external-cdn)](https://packagephobia.com/result?p=vite-plugin-import-external-cdn)
+[![justforfunnoreally.dev badge](https://img.shields.io/badge/justforfunnoreally-dev-9ff)](https://justforfunnoreally.dev)
+
 从外部 CDN 导入所有依赖（只支持产物为 ESM）。
 
 > 备注：仅 JS 模块转换为 CDN 导入；对于其它资源，如依赖的样式，vite 仍输出构建产物，目前此插件不会输出额外的 CDN 样式标签。

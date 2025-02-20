@@ -23,6 +23,6 @@ export default defineConfig({
             external: [/^node:/],
         },
     },
-    plugins: [dts()],
+    plugins: [dts({ rollupTypes: true })],
     clearScreen: false,
 });
