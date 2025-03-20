@@ -31,7 +31,7 @@ const init = plop => {
 			},
 			{
 				type: 'input',
-				name: 'reopAuthorName',
+				name: 'repoAuthorName',
 				message: '请输入仓库所有者名'
 			},
 			{
