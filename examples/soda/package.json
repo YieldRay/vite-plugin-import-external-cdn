@@ -10,16 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "soda-material" : "~0.0.32",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "soda-material": "~0.0.36"
   },
   "devDependencies": {
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^6.1.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "vite": "^7.1.9",
     "vite-plugin-import-external-cdn": "workspace:*",
-    "vite-plugin-singlefile": "^2.1.0"
+    "vite-plugin-singlefile": "^2.3.0"
   }
 }

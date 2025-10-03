@@ -7,7 +7,8 @@
 
 从外部 CDN 导入所有依赖（只支持产物为 ESM）。
 
-> 备注：仅 JS 模块转换为 CDN 导入；对于其它资源，如依赖的样式，vite 仍输出构建产物，目前此插件不会输出额外的 CDN 样式标签。
+> 备注：仅 JS 模块转换为 CDN 导入；对于其它资源，如依赖的样式，vite 仍输出构建产物，目前此插件不会输出额外的 CDN 样式标签。  
+> 此插件假设 vite.config.ts 与 package.json 均位于项目的根目录，且需要确保项目中的运行时依赖正确位于 package.json 的 dependencies 字段中。
 
 ##### before
 
@@ -44,7 +45,7 @@ import { defineConfig } from "vite";
 import importExternalCDN from "vite-plugin-import-external-cdn";
 
 export default defineConfig({
-    plugins: [importExternalCDN()],
+  plugins: [importExternalCDN()],
 });
 ```
 
@@ -57,11 +58,11 @@ import { defineConfig } from "vite";
 import importExternalCDN from "vite-plugin-import-external-cdn";
 
 export default defineConfig({
-    plugins: [
-        importExternalCDN({
-            path: (name, version) => `https://esm.run/${name}@${version}`,
-        }),
-    ],
+  plugins: [
+    importExternalCDN({
+      path: (name, version) => `https://esm.run/${name}@${version}`,
+    }),
+  ],
 });
 ```
 
